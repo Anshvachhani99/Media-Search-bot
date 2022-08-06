@@ -2,11 +2,23 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DATABASE_URI, SESSION
 from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+db = Database(DATABASE_URI, SESSION)
+
+@Client.on_message(filters.command("start"))
+async def start(bot, message):
+    chat_id = message.from_user.id
+    if not await db.is_user_exist(chat_id)
+        data = await bot.get_me()
+        BOT_USERNAME = data.username
+        await db.add_user(chat_id)
+            LOG_CHANNEL,
+            f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
+        ) 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
