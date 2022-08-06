@@ -6,6 +6,7 @@ from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION,
 from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 from Database.users_chats_db import Database
+from plugins import handle_user_status
 logger = logging.getLogger(__name__)
 
 db = Database(DATABASE_URI, SESSION)
