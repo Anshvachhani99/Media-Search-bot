@@ -8,16 +8,16 @@ from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-hb = Database
+
 db = Database(DATABASE_URI, SESSION)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
     chat_id = message.from_user.id
-    if not await hb.is_user_exist(chat_id)
+    if not await db.is_user_exist(chat_id)
         data = await bot.get_me()
         BOT_USERNAME = data.username
-        await hb.add_user(chat_id)
+        await db.add_user(chat_id)
             LOG_CHANNEL,
             f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
