@@ -27,6 +27,10 @@ IClient = AsyncIOMotorClient(DATABASE_URI_2)
 imdbdb=client[DATABASE_NAME_2]
 imdb=Instance.from_db(imdbdb)
 
+# temp db for banned 
+class temp(object):
+    U_NAME = None
+    
 @instance.register
 class Media(Document):
     file_id = fields.StrField(attribute='_id')
