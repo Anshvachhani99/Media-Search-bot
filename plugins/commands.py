@@ -8,6 +8,7 @@ from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
+hb = Database
 db = Database(DATABASE_URI, SESSION)
 
 @Client.on_message(filters.command("start"))
