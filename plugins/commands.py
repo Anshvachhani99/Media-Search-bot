@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DATABASE_URI, SESSION
 from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
-from Database import Database
+from Database.users_chats_db import Database
 logger = logging.getLogger(__name__)
 
 db = Database(DATABASE_URI, SESSION)
