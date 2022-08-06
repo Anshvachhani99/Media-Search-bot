@@ -21,6 +21,11 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
+PUBLIC_FILE_STORE = [int(ch) for ch in (environ.get('PUBLIC_FILE_STORE', '')).split()]
+
+
 
 # MongoDB information
 DATABASE_URI = environ['DATABASE_URI']
