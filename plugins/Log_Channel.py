@@ -2,10 +2,10 @@
 
 import datetime
 
-from Config import DB_URL, SESSION
+from info import DATABASE_URI, SESSION
 from Database import Database
 
-db = Database(DB_URL, SESSION)
+db = Database(DATABASE_URI, SESSION)
 
 
 async def handle_user_status(bot, cmd):
