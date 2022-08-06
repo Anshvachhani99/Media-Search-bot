@@ -3,7 +3,7 @@
 import datetime
 
 from info import DATABASE_URI, SESSION
-from Database import Database
+from Database import users_chats_db
 
 db = Database(DATABASE_URI, SESSION)
 
