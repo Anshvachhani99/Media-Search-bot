@@ -4,12 +4,11 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DATABASE_URI, SESSION, LOG_CHANNEL
 from utils import Media, get_file_details, get_size
+from Database.users_chats_db import Database
 from pyrogram.errors import UserNotParticipant
-from Database import Database
-from plugins import handle_user_status
 logger = logging.getLogger(__name__)
 
-db = Database (DATABASE_URI, SESSION)
+db = Database(DATABASE_URI, SESSION)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
