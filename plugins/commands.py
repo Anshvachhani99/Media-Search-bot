@@ -2,13 +2,13 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DB_URI, SESSION, LOG_CHANNEL
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DATABASE_URI, SESSION, LOG_CHANNEL
 from Database.users_chats_db import Database
 from utils import Media, get_file_details, get_size
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-
+DB_URI = DATABASE_URI
 db = Database(DB_URI, SESSION)
 
 @Client.on_message(filters.command("start"))
