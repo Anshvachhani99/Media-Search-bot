@@ -9,7 +9,7 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 hb = Database
-db = Database(DB_URI, SESSION)
+db = Database(DATABASE_URI, SESSION)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
